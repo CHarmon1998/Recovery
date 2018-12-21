@@ -1,0 +1,9 @@
+pip3 install telethon
+
+from telethon import TelegramClient
+api_id=691006
+api_hash='ad05c87434a13f982e7194daf569dfe8'
+client = TelegramClient('test_session', api_id, api_hash)
+client.start()
+for message in client.get_message_history('C19S98H', limit=25):
+    client.download_media(message)
